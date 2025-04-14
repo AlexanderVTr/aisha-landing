@@ -1,53 +1,32 @@
-import { useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Features from '../components/Features';
-import HowItWorks from '../components/HowItWorks';
-import CTA from '../components/CTA';
-import Footer from '../components/Footer';
 
-export const Index = () => {
-  useEffect(() => {
-    // Preload any animations or heavy resources
-    document.body.classList.add('loaded');
+import React from 'react';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import HeroSection from '@/components/sections/HeroSection';
+import FeaturesSection from '@/components/sections/FeaturesSection';
+import PricingSection from '@/components/sections/PricingSection';
+import InstallSection from '@/components/sections/InstallSection';
+import FeedbackSection from '@/components/sections/FeedbackSection';
+import ContactSection from '@/components/sections/ContactSection';
+import AboutUsSection from '@/components/sections/AboutUsSection';
 
-    // Add intersection observer for scroll animations
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    const handleIntersect = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersect, observerOptions);
-    document.querySelectorAll('.animate-fade-in, .animate-fade-in-up, .animate-fade-in-right').forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
+const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <CTA />
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">
+        <HeroSection />
+        <FeaturesSection />
+        <PricingSection />
+        <InstallSection />
+        <FeedbackSection />
+        <ContactSection />
+        <AboutUsSection />
+        {/*<LegalSection />*/}
       </main>
       <Footer />
     </div>
   );
 };
 
+export default Index;
