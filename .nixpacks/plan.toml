@@ -1,0 +1,1 @@
+ignoredPaths = ["supabase/functions", "supabase/**"]
