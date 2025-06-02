@@ -1,0 +1,4 @@
+*/supabase/
+deno.json
+deno.jsonc
+*.deno
