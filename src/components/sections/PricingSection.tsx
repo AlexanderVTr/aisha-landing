@@ -1,53 +1,38 @@
-
-import React from 'react';
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Check } from 'lucide-react';
+import { Check } from "lucide-react";
 
 const pricingPlans = [
-  // {
-  //   name: "Free",
-  //   price: "$0",
-  //   period: "forever",
-  //   description: "Basic features for casual users",
-  //   features: [
-  //     "5 images per day",
-  //     "Basic text-to-image generation",
-  //     "Standard resolution (512x512)",
-  //     "3 artistic styles",
-  //     "Community support",
-  //   ],
-  //   buttonText: "Get Started",
-  //   buttonVariant: "outline" as const,
-  //   highlight: false,
-  // },
   {
-    name: "Billed Monthly",
-    price: "$9.80",
+    name: "Free",
+    price: "$0",
+    period: "forever",
+    description: "You can try it for free",
+    features: ["Only 30 tokens/requests available per month"],
+    buttonText: "Get Started",
+    buttonVariant: "outline" as const,
+    highlight: false,
+  },
+  {
+    name: "Pro",
+    price: "$14.80",
     period: "per month",
-    description: "Advanced features for enthusiasts",
-    features: [
-      "6000 Standard Model Queries",
-      "300 Advanced Model Queries",
-      "Upload Images",
-    ],
+    description: "Most popular",
+    features: ["Hight speed response", "2999 tokens/requests per month"],
     buttonText: "Get",
     buttonVariant: "default" as const,
     highlight: true,
   },
   {
-    name: "Billed Annually",
-    price: "$7.80",
+    name: "Premium (coming soon)",
+    price: "$49.80",
     period: "per month",
-    description: "Advanced features for enthusiasts",
-    features: [
-      "72000 Standard Model Queries",
-      "3600 Advanced Model Queries",
-      "Upload Images",
-    ],
+    description: "Advanced features (coming soon)",
+    features: ["9999 Advanced Model Queries", "Voice Recognition"],
     buttonText: "Get",
     buttonVariant: "outline" as const,
     highlight: false,
-  }
+  },
 ];
 
 const PricingSection = () => {
@@ -57,15 +42,17 @@ const PricingSection = () => {
         <div className="text-center mb-12">
           <h2 className="heading-2 mb-4">Our Prices</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Get started with Chat With AI for explore the power of AI conversation.
+            Get started with Chat With AiSha for fun and playful conversations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-white rounded-xl shadow-md overflow-hidden border ${plan.highlight ? 'border-primary shadow-lg' : 'border-gray-200'}`}
+              className={`bg-white rounded-xl shadow-md overflow-hidden border ${
+                plan.highlight ? "border-primary shadow-lg" : "border-gray-200"
+              }`}
             >
               {plan.highlight && (
                 <div className="bg-primary py-1.5 text-center text-white text-sm font-medium">
@@ -92,7 +79,11 @@ const PricingSection = () => {
 
                 <Button
                   variant={plan.buttonVariant}
-                  className={`w-full ${plan.buttonVariant === 'default' ? 'bg-primary hover:bg-primary/90' : 'border-primary text-primary hover:bg-primary/10'}`}
+                  className={`w-full ${
+                    plan.buttonVariant === "default"
+                      ? "bg-primary hover:bg-primary/90"
+                      : "border-primary text-primary hover:bg-primary/10"
+                  }`}
                   asChild
                 >
                   <a href="#install">{plan.buttonText}</a>

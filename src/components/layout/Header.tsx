@@ -1,7 +1,6 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,10 +10,10 @@ const Header = () => {
   };
 
   const menuItems = [
-    { title: 'Product', href: '#product' },
-    { title: 'Pricing', href: '#pricing' },
-    { title: 'Contact Us', href: '#contact-us' },
-    { title: 'About Us', href: '#about-us' }
+    { title: "Product", href: "#product" },
+    { title: "Pricing", href: "#pricing" },
+    { title: "Contact Us", href: "#contact-us" },
+    { title: "About Us", href: "#about-us" },
   ];
 
   return (
@@ -22,7 +21,9 @@ const Header = () => {
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 font-bold text-xl text-primary">
-            <a href="#home">Chat with AI</a>
+            <a href="#home" className="title">
+              <strong>AiSha</strong>
+            </a>
           </div>
 
           {/* Desktop menu */}
@@ -39,8 +40,13 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:block">
-            <Button className="btn-primary">
-              <a target="_blank" href="https://chromewebstore.google.com/detail/grok-3/aoemlgniakbojcecmjefonjkgnceklpg?hl=en">Install Now</a>
+            <Button variant="gradient" className="btn-primary">
+              <a
+                target="_blank"
+                href="https://chromewebstore.google.com/detail/grok-3/aoemlgniakbojcecmjefonjkgnceklpg?hl=en"
+              >
+                Install Now
+              </a>
             </Button>
           </div>
 
@@ -52,7 +58,11 @@ const Header = () => {
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -74,7 +84,12 @@ const Header = () => {
             ))}
             <div className="pt-2">
               <Button className="w-full btn-primary">
-                <a target="_blank" href="https://chromewebstore.google.com/detail/grok-3/aoemlgniakbojcecmjefonjkgnceklpg?hl=en">Install Now</a>
+                <a
+                  target="_blank"
+                  href="https://chromewebstore.google.com/detail/grok-3/aoemlgniakbojcecmjefonjkgnceklpg?hl=en"
+                >
+                  Install Now
+                </a>
               </Button>
             </div>
           </div>
