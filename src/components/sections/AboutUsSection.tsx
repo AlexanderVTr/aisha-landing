@@ -19,7 +19,7 @@ const AboutUsSection = () => {
             Langfuse.  */}
             This use case focuses on empathy, personality simulation, and
             long-term relational memory, making AiSha feel like a responsive and
-            emotionally intelligent companion.{" "}
+            emotionally intelligent companion.
           </p>
         </div>
       </div>

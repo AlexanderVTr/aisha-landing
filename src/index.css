@@ -120,3 +120,44 @@
   }
 }
 
+.shade {
+  position: absolute;
+  opacity: 0.7;
+  background: radial-gradient(
+    250px 232px at 35%,
+    #fa4a6fcc 0%,
+    #fa4a6f99 31%,
+    #fa4a6f4d 54%,
+    #fa4a6f1a 88%,
+    #0000 100%
+  );
+  border-radius: 288px / 244px;
+  width: 482px;
+  height: 321px;
+  position: absolute;
+  bottom: -204px;
+  right: -198px;
+  transform: rotate(10deg);
+  z-index: 10;
+}
+
+.shade2 {
+  position: absolute;
+  opacity: 0.7;
+  background: radial-gradient(
+    250px 232px at 35%,
+    #fa4a6fcc 0%,
+    #fa4a6f99 31%,
+    #fa4a6f4d 54%,
+    #fa4a6f1a 88%,
+    #0000 100%
+  );
+  border-radius: 288px / 244px;
+  width: 482px;
+  height: 321px;
+  position: absolute;
+  bottom: -184px;
+  right: -169px;
+  transform: rotate(21deg);
+  z-index: 10;
+}
