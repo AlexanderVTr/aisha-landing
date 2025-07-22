@@ -5,12 +5,22 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "https://hoochawhnrfqcarqabal.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhvb2NoYXdobnJmcWNhcnFhYmFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0NzUyNzksImV4cCI6MjA2MDA1MTI3OX0.O_4ajuv-YG4hjQ_ID_IOdoc1AMGVJgq-4Qwkn-ZLiFo";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error(
+    "Missing Supabase environment variables. Please check your .env.local file."
+  );
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const ContactSection = ({ website }) => {
+interface ContactSectionProps {
+  website?: string;
+}
+
+const ContactSection: React.FC<ContactSectionProps> = ({ website }) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -20,12 +30,14 @@ const ContactSection = ({ website }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -74,7 +86,6 @@ const ContactSection = ({ website }) => {
         name: "",
         email: "",
         company: "",
-        productName: "",
         comments: "",
       });
     } catch (error) {
