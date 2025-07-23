@@ -41,12 +41,7 @@ const Header = () => {
 
           <div className="hidden md:block">
             <Button variant="gradient" className="btn-primary">
-              <a
-                target="_blank"
-                href="https://chromewebstore.google.com/detail/grok-3/aoemlgniakbojcecmjefonjkgnceklpg?hl=en"
-              >
-                Install Now
-              </a>
+              <a href="https://chat.aichatbotgirlfriend.com/">Chat Now</a>
             </Button>
           </div>
 
@@ -84,12 +79,7 @@ const Header = () => {
             ))}
             <div className="pt-2">
               <Button className="w-full btn-primary">
-                <a
-                  target="_blank"
-                  href="https://chromewebstore.google.com/detail/grok-3/aoemlgniakbojcecmjefonjkgnceklpg?hl=en"
-                >
-                  Install Now
-                </a>
+                <a href="https://chat.aichatbotgirlfriend.com/">Chat Now</a>
               </Button>
             </div>
           </div>

@@ -18,12 +18,7 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="gradient" asChild>
-                <a
-                  target="_blank"
-                  href="https://chromewebstore.google.com/detail/grok-3/aoemlgniakbojcecmjefonjkgnceklpg?hl=en"
-                >
-                  Install Now
-                </a>
+                <a href="https://chat.aichatbotgirlfriend.com/">Chat Now</a>
               </Button>
               <Button variant="outline" className="btn-outline" asChild>
                 <a href="#features">Learn More</a>
